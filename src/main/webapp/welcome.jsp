@@ -86,7 +86,6 @@ body {
 			</div>
 		</div>
 	</nav>
-
 	<div class="hero-section text-center">
 		<div class="container">
 			<h1 class="display-4 fw-bold">Explore the World</h1>

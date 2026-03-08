@@ -66,6 +66,30 @@
             <h3 class="fw-bold text-dark">Admin Console</h3>
             <p class="text-muted small mb-4">Authorized Personnel Only</p>
         </div>
+        <% if("success".equals(request.getParameter("logout"))) { %>
+    <div id="logoutAlert" class="container mt-3" style="max-width: 400px;">
+        <div class="alert alert-info alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fa-solid fa-circle-info me-2"></i>
+            You have been logged out successfully.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <script>
+        // Wait 3 seconds (3000ms) then close the alert
+        setTimeout(function() {
+            var alertElement = document.getElementById('logoutAlert');
+            if (alertElement) {
+                // Use Bootstrap's built-in alert close method
+                var bsAlert = new bootstrap.Alert(alertElement.querySelector('.alert'));
+                bsAlert.close();
+                
+                // Optional: Clean the URL address bar
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }, 3000);
+    </script>
+<% } %>
 
         <% 
             String error = request.getParameter("error");

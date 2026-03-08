@@ -83,13 +83,21 @@
 		<url-pattern>/TourPlanServlet</url-pattern>
 	</servlet-mapping>
 	<servlet>
-    <servlet-name>AddGuideServlet</servlet-name>
-    <servlet-class>com.tourist.servlet.AddGuideServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>AddGuideServlet</servlet-name>
-    <url-pattern>/addGuide</url-pattern>
-</servlet-mapping>
+		<servlet-name>AddGuideServlet</servlet-name>
+		<servlet-class>com.tourist.servlet.AddGuideServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddGuideServlet</servlet-name>
+		<url-pattern>/addGuide</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateProfileServlet</servlet-name>
+		<servlet-class>com.tourist.servlet.UpdateProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateProfileServlet</servlet-name>
+		<url-pattern>/UpdateProfileServlet</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>LogoutServlet</servlet-name>
 		<servlet-class>com.tourist.servlet.LogoutServlet</servlet-class>

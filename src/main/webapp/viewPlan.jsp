@@ -47,7 +47,23 @@ if (currentUserID == null) {
             </div>
         </div>
     </nav>
-
+<%-- Registration Success Alert --%>
+			<%
+			if ("success".equals(request.getParameter("status"))) {
+			%>
+			<div
+				class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4"
+				role="alert">
+				<div class="d-flex align-items-center justify-content-center">
+					<i class="fa-solid fa-circle-check me-2"></i> <small>Your Booking is 
+			        successful!</small>
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert"
+					aria-label="Close"></button>
+			</div>
+			<%
+			}
+			%>
     <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
@@ -146,7 +162,31 @@ if (currentUserID == null) {
             </div>
         </div>
     </div>
+<script>
+		window.onload = function() {
+			// Find all dismissible alerts inside the login card
+			const alerts = document.querySelectorAll('.alert-dismissible');
 
+			alerts.forEach(function(alertElem) {
+				// Wait 3.5 seconds
+				setTimeout(function() {
+					// Create a Bootstrap alert instance and close it
+					let bsAlert = bootstrap.Alert
+							.getOrCreateInstance(alertElem);
+					if (bsAlert) {
+						bsAlert.close();
+					}
+
+					// Clean URL: removes "?logout=success" or "?error=1" from address bar
+					const cleanUrl = window.location.protocol + "//"
+							+ window.location.host + window.location.pathname;
+					window.history.replaceState({
+						path : cleanUrl
+					}, '', cleanUrl);
+				}, 3500);
+			});
+		};
+	</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

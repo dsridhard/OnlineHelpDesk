@@ -144,7 +144,7 @@
                     </div>
 
                     <div class="d-flex gap-3 mt-5">
-                        <a href="editProfile.jsp" class="btn btn-primary flex-grow-1 py-3 fw-bold rounded-pill shadow-sm">
+                        <a href="UpdateProfileServlet.jsp" class="btn btn-primary flex-grow-1 py-3 fw-bold rounded-pill shadow-sm">
                             <i class="fa-solid fa-user-pen me-2"></i> Update Profile
                         </a>
                         <a href="LogoutServlet" class="btn btn-outline-danger py-3 px-4 rounded-pill d-flex align-items-center justify-content-center">
